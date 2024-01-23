@@ -57,11 +57,12 @@ const Home = () => {
       <div className="container-personagens">
         <div className="titulo">
           <h1>EXPLORE O UNIVERSO</h1>
-          <h3>
+          <h3 className="subtitulo">
             Mergulhe no domínio deslumbrante de todos os personagens clássicos
             que você ama - e aqueles que você descobrirá em breve
           </h3>
           <input
+            className="search"
             type="search"
             placeholder="Busque aqui o nome do personagem"
             value={searchInput}

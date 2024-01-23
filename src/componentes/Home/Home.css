@@ -18,3 +18,22 @@
   font-size: 1.5rem;
   font-weight: 500;
 }
+.subtitulo{
+  font-size: 1rem;
+  color: #b3b1b1;
+}
+
+.search {
+  width: 760px;
+  height: 50px;
+  border: 1px solid #5550; 
+  padding: 9px 4px 9px 40px;
+  background: transparent url("../../assets/busca/Lupa/Shape@1\,5x.svg") no-repeat 13px;
+  border-radius: 60px;
+  background-color: #fdecec;
+}
+.search::placeholder {
+  color: #d71515;
+  font-size: 1rem;
+  font-weight: 500;
+}
