@@ -2,7 +2,7 @@ import './Home.css';
 import React, { useCallback, useEffect, useState } from 'react';
 import api from '../Services/api';
 import ButtonMore from '../ButtonMore';
-import buttonFavorite from '../../assets/icones/heart/Path.svg';
+import buttonFavorite from '../../assets/icones/heart/Path Copy 2@1,5x.svg';
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
@@ -84,6 +84,11 @@ const Home = () => {
             onChange={handleSearchInputChange}
             onClick={handleSearch}
           />
+        </div>
+        <div className="actions-bar">
+          <h3 className="subtitulo">Encontrados {characters.length} heróis</h3>
+          <h3 className="textorange">Ordernar por nome - A/Z</h3>
+          <h3 className="textorange">Somente Favorito</h3>
         </div>
         <div className="card-list">
           {characters.map((character) => {

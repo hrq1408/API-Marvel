@@ -77,3 +77,11 @@ div.img {
   justify-content: space-between;
   align-items: baseline;
 }
+.actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.textorange{
+  color: #f00;
+}
