@@ -46,13 +46,14 @@ const Home = () => {
     }
   }, [characters]);
 
-  function handleSearch() {
+  const handleSearch = () => {
     const dados = characters;
     const pesquisas = JSON.stringify(dados.map((character) => character.name));
 
     localStorage.setItem('dados', pesquisas);
-  }
-  function callCharacter() {
+  };
+
+  const callCharacter = () => {
     api
       .get(`/characters`)
       .then((response) => {
@@ -60,11 +61,18 @@ const Home = () => {
       })
       .catch((err) => console.log(err));
     return api;
-  }
+  };
 
-  function botao() {
+  const invertCards = () => {
+    console.log(characters);
+    const invert = [...characters].reverse();
+    setCharacters(invert);
+    console.log(invert);
+  };
+
+  const botao = () => {
     return <ButtonMore onClick={carregarMais} />;
-  }
+  };
 
   return (
     <>
@@ -87,7 +95,9 @@ const Home = () => {
         </div>
         <div className="actions-bar">
           <h3 className="subtitulo">Encontrados {characters.length} heróis</h3>
-          <h3 className="textorange">Ordernar por nome - A/Z</h3>
+          <button onClick={invertCards}>
+            <h3 className="textorange">Ordernar por nome - A/Z</h3>
+          </button>
           <h3 className="textorange">Somente Favorito</h3>
         </div>
         <div className="card-list">
