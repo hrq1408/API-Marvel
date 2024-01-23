@@ -2,11 +2,16 @@ import './Home.css';
 import React, { useCallback, useEffect, useState } from 'react';
 import api from '../Services/api';
 import ButtonMore from '../ButtonMore';
+import buttonFavorite from '../../assets/icones/heart/Path.svg';
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState({});
+
+  useEffect(() => {
+    callCharacter();
+  }, []);
 
   useEffect(() => {
     api
@@ -20,7 +25,7 @@ const Home = () => {
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
     if (e.target.value === '') {
-      setSearch('a');
+      callCharacter();
     } else {
       setSearch(e.target.value);
     }
@@ -47,6 +52,15 @@ const Home = () => {
 
     localStorage.setItem('dados', pesquisas);
   }
+  function callCharacter() {
+    api
+      .get(`/characters`)
+      .then((response) => {
+        setCharacters(response.data.data.results);
+      })
+      .catch((err) => console.log(err));
+    return api;
+  }
 
   function botao() {
     return <ButtonMore onClick={carregarMais} />;
@@ -63,6 +77,7 @@ const Home = () => {
           </h3>
           <input
             className="search"
+            key="search"
             type="search"
             placeholder="Busque aqui o nome do personagem"
             value={searchInput}
@@ -76,13 +91,15 @@ const Home = () => {
               character.thumbnail.path + '.' + character.thumbnail.extension;
             const back = { backgroundImage: `url(${urlImg})` };
             return (
-              <>
-                <div className="card" key={character.id}>
-                  <div id="img" style={back} />
-                  <h2>{character.name}</h2>
-                  <p>{character.description}</p>
+              <div key={character.id}>
+                <div className="card">
+                  <div className="img" style={back} />
+                  <div className="action">
+                    <h2>{character.name}</h2>
+                    <img src={buttonFavorite} alt="favorite" />
+                  </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

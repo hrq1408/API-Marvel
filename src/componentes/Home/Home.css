@@ -37,3 +37,43 @@
   font-size: 1rem;
   font-weight: 500;
 }
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {  
+  height: 28.12rem;
+  width: 20rem;
+  margin: 0.625rem; 
+  overflow: hidden;
+ 
+}
+
+.card h2{
+  margin: 0;
+  padding: 16px 0px 0px 10px;
+  font-size: 17px;
+}
+
+.card p {
+  padding: 0px 10px;
+  text-align: justify;
+}
+
+div.img {
+  height: 24rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 9px solid #f00;
+}
+
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
