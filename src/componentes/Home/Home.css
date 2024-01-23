@@ -1,87 +1,50 @@
-.home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  margin-top: 3rem;
-}
-
-.cont-flex {
-  display: flex;
-  flex-direction: column;
-  line-height: 15px;
-  align-items: flex-end;
-}
-
-.cont-flex p {
-  display: flex;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-.subtitulo{
-  font-size: 1rem;
-  color: #b3b1b1;
-}
-
-.search {
-  width: 760px;
-  height: 50px;
-  border: 1px solid #5550; 
-  padding: 9px 4px 9px 40px;
-  background: transparent url("../../assets/busca/Lupa/Shape@1\,5x.svg") no-repeat 13px;
-  border-radius: 60px;
-  background-color: #fdecec;
-}
-.search::placeholder {
-  color: #d71515;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {  
-  height: 28.12rem;
-  width: 20rem;
-  margin: 0.625rem; 
-  overflow: hidden;
- 
-}
-
-.card h2{
-  margin: 0;
-  padding: 16px 0px 0px 10px;
-  font-size: 17px;
-}
-
-.card p {
-  padding: 0px 10px;
-  text-align: justify;
-}
-
-div.img {
-  height: 24rem;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-bottom: 9px solid #f00;
-}
-
-
 .action {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin: 10px;
 }
 .actions-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
+
+input[type="checkbox"].switch{
+  appearance: none;
+  width: 3.5em;
+  height: 1.5em;
+  background: #ddd;
+  border-radius: 3em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"].switch:checked{
+  background: #0ebeff;
+}
+
+input[type="checkbox"].switch:after{
+  position: absolute;
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 .25em rgba(0,0,0,.3);
+  transform: scale(.7);
+  left: 0;
+  transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"].switch:checked:after{
+  left: calc(100% - 1.5em);
+}
 .textorange{
   color: #f00;
+  display: flex;
+
 }

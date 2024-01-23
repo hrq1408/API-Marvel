@@ -1,0 +1,24 @@
+.card {
+  /* Seus estilos para o componente CharacterCard */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.card .img {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+}
+
+.card h2 {
+  margin: 0;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.card img {
+  width: 20px;
+  height: 20px;
+}
