@@ -1,10 +1,12 @@
 import './App.css';
-import MarvelCharacters from './componentes/ListaMarvel';
+import Home from './componentes/Home';
+import Header from './componentes/Header';
 
 function App() {
   return (
     <div className="App">
-      <MarvelCharacters />
+      <Header />
+      <Home />
     </div>
   );
 }
