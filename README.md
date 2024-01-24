@@ -1,40 +1,54 @@
-# Frontend Challenge
+# Home Component
 
-### Objetivo
-Desenvolver uma aplicação de listagem e detalhe de personagens de quadrinhos.
+## Descrição
 
-#### Requisitos
-- Deve ser uma SPA “single page application” (dar preferencia ao React);
-- Não utilizar bibliotecas de UI como: bootstrap, semantic-ui, antdesign e etc;
-- Utilizar API da Marvel (https://developer.marvel.com/docs);
-- Disponibilizar em uma URL pública do projeto rodando para avaliação;
-- Disponibilizar código em repositório Git de sua preferência, commitando cada fase do seu processo de desenvolvimento;
-- Seguir layout da pasta `./assets`, respeitando as páginas, features e componentes (não será avaliado “pixel perfect”).
+Esse componente é responsável por exibir uma lista de personagens e fornecer funcionalidades de pesquisa, ordenação e paginação.
 
-#### Requisitos funcionais
-- Página de listagem de personagens (home):
-  - Exibir os 20 primeiros resultados da API;
-  - Permitir ordenação por nome do personagem;
-  - Permitir filtrar por nome, pelo campo de busca;
-  - Permitir mostrar apenas os personagens favoritos;
-  - Permitir o usuário favoritar/desfavoritar até 5 personagens;
-- Página de detalhe do personagem:
-  - Exibir dados do personagem;
-  - Exibir últimos 10 quadrinhos lançados deste personagem (onSaleDate);
-  - Permitir o usuário favoritar/desfavoritar (dentro do limite de 5).
-  
-#### `Bônus (não obrigatório)`
-- Adicionar paginação a listagem para exibir além dos 20 personagens iniciais;
-- Persistir os dados de favoritos (para manter os dados após o reload da página);
-- Layout responsivo;
-- Utilização de ES6+;
-- Utilização de ferramentas para garantir a qualidade do código;
-- Teste e2e;
-- CI/CD.
+## Funcionalidades
 
-### Dicas
-- Valorizamos muito testes em nosso processo de desenvolvimento;
-- Aqui no LuizaLabs todos os desenvolvedores podem participar do processo de avaliação técnica então oriente os avaliadores a como instalar, testar e executar seu código.
+Exibição de uma lista de personagens
+Busca de personagens por nome
+Ordenação de personagens por nome (A-Z ou Z-A)
+Paginação de resultados
 
-<br/>
-<br/>
+## Uso
+
+Importação
+JavaScript
+import Home from './Home';
+Use code with caution. Learn more
+Renderização
+JavaScript
+<Home />
+Use code with caution. Learn more
+
+## Propriedades
+
+Não há propriedades específicas para o componente Home.
+
+## Estados
+
+characters: Array de objetos contendo os dados dos personagens.
+searchInput: Valor da caixa de pesquisa.
+search: Objeto contendo os critérios de pesquisa.
+currentPage: Número da página atual (usado para paginação).
+itemsPerPage: Quantidade de itens a serem exibidos por página.
+
+## Métodos
+
+carregarPersonagens: Busca os personagens da API e atualiza o estado characters.
+handleSearchInputChange: Atualiza o estado searchInput com base na entrada do usuário na caixa de pesquisa.
+handleSearch: Realiza a busca de personagens usando os critérios da pesquisa e atualiza o estado characters.
+inverterCards: Inverte a ordem dos personagens na lista.
+
+## Dependências
+
+api: Serviço para fazer chamadas à API de personagens.
+CharacterCard: Componente responsável por renderizar um card de personagem individual.
+SearchBar: Componente responsável por fornecer a caixa de pesquisa.
+
+## Observações
+
+O componente Home utiliza a API de personagens para buscar os dados dos personagens.
+A ordenação de personagens é implementada através da inversão do array characters.
+A paginação é implementada utilizando os estados currentPage e itemsPerPage.
